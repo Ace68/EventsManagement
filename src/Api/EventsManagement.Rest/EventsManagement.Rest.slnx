@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/30 Shared/">
+    <Project Path="EventsManagement.Shared/EventsManagement.Shared.csproj" />
+  </Folder>
+  <Folder Name="/50 Modules/" />
+  <Folder Name="/50 Modules/Attendees/">
+    <Project Path="Attendees/EventsManagement.Attendees.Facade/EventsManagement.Attendees.Facade.csproj" />
+  </Folder>
+  <Folder Name="/50 Modules/Events/">
+    <Project Path="Events/EventsManagement.Events.Domain/EventsManagement.Events.Domain.csproj" />
+    <Project Path="Events/EventsManagement.Events.Facade/EventsManagement.Events.Facade.csproj" />
+    <Project Path="Events/EventsManagement.Events.Infrastructure/EventsManagement.Events.Infrastructure.csproj" />
+    <Project Path="Events/EventsManagement.Events.ReadModel/EventsManagement.Events.ReadModel.csproj" />
+    <Project Path="Events/EventsManagement.Events.SharedKernel/EventsManagement.Events.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/80 Infrastructure/">
+    <Project Path="EventsManagement.Infrastructure/EventsManagement.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/90 Presentation/">
+    <Project Path="EventsManagement.Rest/EventsManagement.Rest.csproj" />
+  </Folder>
+</Solution>
