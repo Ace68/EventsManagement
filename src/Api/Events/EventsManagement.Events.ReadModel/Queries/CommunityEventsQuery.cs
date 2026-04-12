@@ -51,7 +51,8 @@ internal class CommunityEventsQuery(EventsManagementContext eventsManagementCont
                 ? eventsManagementContext.Set<CommunityEventDto>()
                     .Include(c => c.EventOrganizers)
                     .Where(query)
-                : eventsManagementContext.Set<CommunityEventDto>();
+                : eventsManagementContext.Set<CommunityEventDto>()
+                    .Include(c => c.EventOrganizers);
                     
             var count = await queryable.CountAsync(cancellationToken: cancellationToken);
             var results = await queryable.Skip(page * pageSize).Take(pageSize)
