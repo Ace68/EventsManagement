@@ -1,9 +1,9 @@
 ﻿namespace EventsManagement.Shared.Persister;
 
-public interface IEventsManagementRepository : IDisposable
+public interface IEventsManagementRepository<TAggregate> : IDisposable where TAggregate : class
 {
-    Task<TAggregate> GetByIdAsync<TAggregate>(string id, CancellationToken cancellationToken) where TAggregate : class;
-    Task AddAsync<TAggregate>(TAggregate entity, CancellationToken cancellationToken) where TAggregate : class;
-    Task UpdateAsync<TAggregate>(TAggregate entity, CancellationToken cancellationToken) where TAggregate : class;
-    Task DeleteAsync<TAggregate>(TAggregate entity, CancellationToken cancellationToken) where TAggregate : class;
+    Task<TAggregate> GetByIdAsync(string id, CancellationToken cancellationToken);
+    Task AddAsync(TAggregate entity, CancellationToken cancellationToken);
+    Task UpdateAsync(TAggregate entity, CancellationToken cancellationToken);
+    Task DeleteAsync(TAggregate entity, CancellationToken cancellationToken);
 }

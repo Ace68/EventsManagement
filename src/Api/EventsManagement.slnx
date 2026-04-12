@@ -8,6 +8,7 @@
   </Folder>
   <Folder Name="/50 Modules/Events/">
     <Project Path="Events/EventsManagement.Events.Domain/EventsManagement.Events.Domain.csproj" />
+    <Project Path="Events/EventsManagement.Events.Entities/EventsManagement.Events.Entities.csproj" />
     <Project Path="Events/EventsManagement.Events.Facade/EventsManagement.Events.Facade.csproj" />
     <Project Path="Events/EventsManagement.Events.Infrastructure/EventsManagement.Events.Infrastructure.csproj" />
     <Project Path="Events/EventsManagement.Events.ReadModel/EventsManagement.Events.ReadModel.csproj" />

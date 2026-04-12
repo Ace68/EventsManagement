@@ -4,12 +4,14 @@ using Muflone.Messages.Commands;
 
 namespace EventsManagement.Shared.Handlers;
 
-public abstract class EventsManagementCommandHandler<TCommand> : ICommandHandlerAsync<TCommand> where TCommand : class, ICommand
+public abstract class EventsManagementCommandHandler<TCommand, TAggregate> : ICommandHandlerAsync<TCommand>
+    where TCommand : class, ICommand
+    where TAggregate : class
 {
-    protected readonly IEventsManagementRepository Repository;
+    protected readonly IEventsManagementRepository<TAggregate> Repository;
     protected readonly ILogger Logger;
 
-    protected EventsManagementCommandHandler(IEventsManagementRepository repository, ILoggerFactory loggerFactory)
+    protected EventsManagementCommandHandler(IEventsManagementRepository<TAggregate> repository, ILoggerFactory loggerFactory)
     {
         Repository = repository;
         Logger = loggerFactory.CreateLogger(GetType());

@@ -5,9 +5,9 @@ using Muflone.Messages.Commands;
 
 namespace EventsManagement.Events.Domain;
 
-public static class EventsDomainHelper
+public static class DomainHelper
 {
-    public static IServiceCollection AddEventsDomain(this IServiceCollection services)
+    public static IServiceCollection AddDomain(this IServiceCollection services)
     {
         services.AddScoped<ICommandHandlerAsync<CreateCommunityEvent>, CreateCommunityEventCommandHandler>();
         

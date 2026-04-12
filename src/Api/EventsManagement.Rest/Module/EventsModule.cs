@@ -10,7 +10,7 @@ public class EventsModule : IModule
     
     public IServiceCollection Register(WebApplicationBuilder builder)
     {
-        builder.Services.AddEvents();
+        builder.Services.AddEvents(builder.Configuration);
         
         return builder.Services;
     }

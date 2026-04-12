@@ -2,7 +2,7 @@
 using EventsManagement.Shared.DomainIds;
 using Muflone.Core;
 
-namespace EventsManagement.Events.Domain.Entities;
+namespace EventsManagement.Events.Entities.Entities;
 
 public class CommunityEvent : AggregateRoot
 {
@@ -17,14 +17,14 @@ public class CommunityEvent : AggregateRoot
     {
     }
 
-    internal static CommunityEvent Create(CommunityEventId eventId, EventName eventName, EventDescription eventDescription,
-        EventVenue eventVenue, IEnumerable<EventOrganizer> eventOrganizers, EventDate eventDate, Guid correlationId)
+    public static CommunityEvent Create(CommunityEventId eventId, EventName eventName, EventDescription eventDescription,
+        EventVenue eventVenue, IEnumerable<EventOrganizer> eventOrganizers, EventDate eventDate)
     {
-        return new CommunityEvent(eventId, eventName, eventDescription, eventVenue, eventOrganizers, eventDate, correlationId);
+        return new CommunityEvent(eventId, eventName, eventDescription, eventVenue, eventOrganizers, eventDate);
     }
 
     private CommunityEvent(CommunityEventId eventId, EventName eventName, EventDescription eventDescription,
-        EventVenue eventVenue, IEnumerable<EventOrganizer> eventOrganizers, EventDate eventDate, Guid correlationId)
+        EventVenue eventVenue, IEnumerable<EventOrganizer> eventOrganizers, EventDate eventDate)
     {
         EventId = eventId;
         EventName = eventName;

@@ -12,7 +12,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\EventsManagement.Shared\EventsManagement.Shared.csproj" />
-      <ProjectReference Include="..\EventsManagement.Events.Entities\EventsManagement.Events.Entities.csproj" />
       <ProjectReference Include="..\EventsManagement.Events.SharedKernel\EventsManagement.Events.SharedKernel.csproj" />
     </ItemGroup>
 
