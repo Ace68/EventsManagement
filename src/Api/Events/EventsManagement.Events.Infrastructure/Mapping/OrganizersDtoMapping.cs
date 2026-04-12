@@ -15,6 +15,10 @@ public class OrganizersDtoMapping : IEntityTypeConfiguration<OrganizersDto>
             .IsRequired()
             .HasMaxLength(36);
         
+        builder.Property(t => t.EventId)
+            .IsRequired()
+            .HasMaxLength(36);
+        
         builder.Property(t => t.OrganizerName)
             .IsRequired()
             .HasMaxLength(100);

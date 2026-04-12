@@ -39,11 +39,5 @@ public class EventsManagementContext(DbContextOptions<EventsManagementContext> o
             .WithOne(o => o.CommunityEvent)
             .HasForeignKey(o => o.EventId)
             .OnDelete(DeleteBehavior.Cascade);
-        
-        modelBuilder.Entity<Entities.Dtos.OrganizersDto>()
-            .HasOne(o => o.CommunityEvent)
-            .WithMany(e => e.EventOrganizers)
-            .HasForeignKey(o => o.EventId)
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

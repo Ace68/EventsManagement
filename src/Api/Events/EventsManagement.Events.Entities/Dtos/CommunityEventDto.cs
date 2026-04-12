@@ -9,5 +9,5 @@ public class CommunityEventDto : DtoBase
     public string EventVenue { get; set; } = null!;
     public DateTime EventDate { get; set; }
 
-    public virtual ICollection<OrganizersDto> EventOrganizers { get; set; } = [];
+    public virtual ICollection<OrganizersDto> EventOrganizers { get; set; } = null!;
 }

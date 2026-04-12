@@ -7,14 +7,10 @@ namespace EventsManagement.Events.Entities.Dtos;
 public class OrganizersDto : DtoBase
 {
     public Guid EventId { get; set; }
-    public string OrganizerName { get; set; } = null!;
+    public string OrganizerName { get; set; }
     
     public virtual CommunityEventDto CommunityEvent { get; set; } = null!;
     
-    protected OrganizersDto()
-    {
-    }
-
     internal static OrganizersDto CreateOrganizer(CommunityEventId eventId, EventOrganizer organizer) 
         => new (new Guid(eventId.Value), organizer.Value);
     

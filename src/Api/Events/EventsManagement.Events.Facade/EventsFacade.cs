@@ -1,4 +1,5 @@
 ﻿using EventsManagement.Events.Entities.Dtos;
+using EventsManagement.Events.Entities.Helpers;
 using EventsManagement.Events.SharedKernel.CustomTypes;
 using EventsManagement.Events.SharedKernel.Messages.Commands;
 using EventsManagement.Events.SharedKernel.Messages.Queries;
@@ -39,15 +40,8 @@ internal class EventsFacade(ICommandHandlerAsync<CreateCommunityEvent> createCom
         
         GetCommunityEvents query = new(new PageNumber(page), new PageSize(pageSize));
         PagedResult<CommunityEventDto> result = await getCommunityEventQueryHandler.HandleAsync(query, cancellationToken);
-        
-        return Result<PagedResult<CommunityEventJson>>.Success(new PagedResult<CommunityEventJson>(result.Results.Select(r => new CommunityEventJson
-        {
-            EventId = r.Id.ToString(),
-            EventName = r.EventName,
-            Description = r.EventDescription,
-            Venue = r.EventVenue,
-            Date = r.EventDate,
-            Organizers = r.EventOrganizers.Select(eo => eo.OrganizerName).ToList()
-        }).ToList(), result.Page, result.PageSize, result.TotalRecords));
+
+        return Result<PagedResult<CommunityEventJson>>.Success(new PagedResult<CommunityEventJson>(
+            result.Results.Select(r => r.ToJson()).ToList(), result.Page, result.PageSize, result.TotalRecords));
     }
 }
