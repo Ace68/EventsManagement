@@ -11,6 +11,8 @@ public class OrganizersDto : DtoBase
     
     public virtual CommunityEventDto CommunityEvent { get; set; } = null!;
     
+    protected OrganizersDto() { }
+    
     internal static OrganizersDto CreateOrganizer(CommunityEventId eventId, EventOrganizer organizer) 
         => new (new Guid(eventId.Value), organizer.Value);
     
