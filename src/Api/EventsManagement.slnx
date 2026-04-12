@@ -14,6 +14,7 @@
     <Project Path="Events/EventsManagement.Events.ReadModel/EventsManagement.Events.ReadModel.csproj" />
     <Project Path="Events/EventsManagement.Events.SharedKernel/EventsManagement.Events.SharedKernel.csproj" />
   </Folder>
+  <Folder Name="/50 Modules/Notifications/" />
   <Folder Name="/80 Infrastructure/">
     <Project Path="EventsManagement.Infrastructure/EventsManagement.Infrastructure.csproj" />
   </Folder>
