@@ -31,6 +31,7 @@
       <ProjectReference Include="..\Attendees\EventsManagement.Attendees.Facade\EventsManagement.Attendees.Facade.csproj" />
       <ProjectReference Include="..\EventsManagement.Infrastructure\EventsManagement.Infrastructure.csproj" />
       <ProjectReference Include="..\Events\EventsManagement.Events.Facade\EventsManagement.Events.Facade.csproj" />
+      <ProjectReference Include="..\Notifications\EventsManagement.Notifications.Facade\EventsManagement.Notifications.Facade.csproj" />
     </ItemGroup>
 
 </Project>

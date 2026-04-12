@@ -9,22 +9,13 @@
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
-    
+
     <ItemGroup>
         <PackageReference Include="Lena" Version="1.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.5" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.5" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\EventsManagement.Infrastructure\EventsManagement.Infrastructure.csproj" />
-      <ProjectReference Include="..\..\EventsManagement.Shared\EventsManagement.Shared.csproj" />
-      <ProjectReference Include="..\EventsManagement.Events.Domain\EventsManagement.Events.Domain.csproj" />
-      <ProjectReference Include="..\EventsManagement.Events.Infrastructure\EventsManagement.Events.Infrastructure.csproj" />
-      <ProjectReference Include="..\EventsManagement.Events.ReadModel\EventsManagement.Events.ReadModel.csproj" />
-      <ProjectReference Include="..\EventsManagement.Events.SharedKernel\EventsManagement.Events.SharedKernel.csproj" />
     </ItemGroup>
 
 </Project>

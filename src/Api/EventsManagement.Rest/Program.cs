@@ -9,7 +9,8 @@ builder.RegisterModules([
     new InfrastructureModule(),
     new OpenApiModule(),
     new EventsModule(),
-    new AttendeesModule()
+    new AttendeesModule(),
+    new NotificationsModule()
 ]);
 
 var app = builder.Build();
