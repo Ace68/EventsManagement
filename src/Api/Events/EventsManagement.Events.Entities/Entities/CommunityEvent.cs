@@ -6,7 +6,6 @@ namespace EventsManagement.Events.Entities.Entities;
 
 public class CommunityEvent : AggregateRoot
 {
-    public CommunityEventId EventId { get; private set; } = null!;
     public EventName EventName{ get; private set; } = null!;
     public EventDescription EventDescription{ get; private set; } = null!;
     public EventVenue EventVenue{ get; private set; } = null!;
@@ -26,7 +25,8 @@ public class CommunityEvent : AggregateRoot
     private CommunityEvent(CommunityEventId eventId, EventName eventName, EventDescription eventDescription,
         EventVenue eventVenue, IEnumerable<EventOrganizer> eventOrganizers, EventDate eventDate)
     {
-        EventId = eventId;
+        Id = eventId;
+
         EventName = eventName;
         EventDescription = eventDescription;
         EventVenue = eventVenue;

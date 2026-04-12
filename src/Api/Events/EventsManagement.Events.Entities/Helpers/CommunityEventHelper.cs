@@ -10,10 +10,10 @@ public static class CommunityEventHelper
 {
     public static CommunityEventDto ToDto(this CommunityEvent communityEvent)
     {
-        var dto = CommunityEventDto.CreateCommunityEvent(communityEvent.EventId, communityEvent.EventName, communityEvent.EventDescription,
+        var dto = CommunityEventDto.CreateCommunityEvent(new CommunityEventId(communityEvent.Id.Value), communityEvent.EventName, communityEvent.EventDescription,
             communityEvent.EventVenue, communityEvent.EventDate);
 
-        dto.AddEventOrganizers(communityEvent.EventOrganizers.Select(eo => eo.ToDto(communityEvent.EventId)).ToList());
+        dto.AddEventOrganizers(communityEvent.EventOrganizers.Select(eo => eo.ToDto(new CommunityEventId(communityEvent.Id.Value))).ToList());
 
         return dto;
     }

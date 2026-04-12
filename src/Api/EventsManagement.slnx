@@ -17,6 +17,7 @@
   <Folder Name="/50 Modules/Notifications/">
     <Project Path="Notifications/EventsManagement.Notifications.Entities/EventsManagement.Notifications.Entities.csproj" />
     <Project Path="Notifications/EventsManagement.Notifications.Facade/EventsManagement.Notifications.Facade.csproj" />
+    <Project Path="Notifications/EventsManagement.Notifications.SharedKernel/EventsManagement.Notifications.SharedKernel.csproj" />
   </Folder>
   <Folder Name="/80 Infrastructure/">
     <Project Path="EventsManagement.Infrastructure/EventsManagement.Infrastructure.csproj" />
