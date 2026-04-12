@@ -1,6 +1,8 @@
-﻿namespace EventsManagement.Shared.Persister;
+﻿using Muflone;
 
-public interface IEventsManagementRepository<TAggregate> : IDisposable where TAggregate : class
+namespace EventsManagement.Shared.Persister;
+
+public interface IEventsManagementRepository<TAggregate> : IDisposable where TAggregate : class, IAggregate
 {
     Task<TAggregate> GetByIdAsync(string id, CancellationToken cancellationToken);
     Task AddAsync(TAggregate entity, CancellationToken cancellationToken);

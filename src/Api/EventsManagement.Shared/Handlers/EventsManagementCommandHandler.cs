@@ -1,12 +1,13 @@
 ﻿using EventsManagement.Shared.Persister;
 using Microsoft.Extensions.Logging;
+using Muflone;
 using Muflone.Messages.Commands;
 
 namespace EventsManagement.Shared.Handlers;
 
 public abstract class EventsManagementCommandHandler<TCommand, TAggregate> : ICommandHandlerAsync<TCommand>
     where TCommand : class, ICommand
-    where TAggregate : class
+    where TAggregate : class, IAggregate
 {
     protected readonly IEventsManagementRepository<TAggregate> Repository;
     protected readonly ILogger Logger;

@@ -1,5 +1,6 @@
 ﻿using EventsManagement.Events.Domain;
 using EventsManagement.Events.Infrastructure;
+using EventsManagement.Events.ReadModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,7 @@ public static class EventsHelper
 
         services.AddInfrastructure(configuration);
         services.AddDomain();
+        services.AddReadModel();
         
         return services;
     }

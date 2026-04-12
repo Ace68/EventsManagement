@@ -32,6 +32,7 @@
       <ProjectReference Include="..\..\EventsManagement.Shared\EventsManagement.Shared.csproj" />
       <ProjectReference Include="..\EventsManagement.Events.Domain\EventsManagement.Events.Domain.csproj" />
       <ProjectReference Include="..\EventsManagement.Events.Infrastructure\EventsManagement.Events.Infrastructure.csproj" />
+      <ProjectReference Include="..\EventsManagement.Events.ReadModel\EventsManagement.Events.ReadModel.csproj" />
       <ProjectReference Include="..\EventsManagement.Events.SharedKernel\EventsManagement.Events.SharedKernel.csproj" />
     </ItemGroup>
 
