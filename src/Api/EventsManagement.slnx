@@ -24,6 +24,7 @@
   </Folder>
   <Folder Name="/80 Infrastructure/">
     <Project Path="EventsManagement.Infrastructure/EventsManagement.Infrastructure.csproj" />
+    <Project Path="EventsManagements.InMemoryBroker/EventsManagements.InMemoryBroker.csproj" />
   </Folder>
   <Folder Name="/90 Presentation/">
     <Project Path="EventsManagement.Rest/EventsManagement.Rest.csproj" />

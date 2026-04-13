@@ -33,7 +33,7 @@ public static class NotificationsHelper
 
         services.AddDomain();
         services.AddInfrastructure(configuration);
-        services.AddHttpContextAccessor().AddReadModel();
+        services.AddReadModel(configuration);
         
         return services;
     }

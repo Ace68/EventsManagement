@@ -9,11 +9,11 @@ using EventsManagement.Shared.ExternalContracts;
 using EventsManagement.Shared.Handlers;
 using EventsManagement.Shared.Persister;
 using Lena.Core;
-using Muflone.Messages.Commands;
+using Muflone.Persistence;
 
 namespace EventsManagement.Notifications.Facade;
 
-internal class NotificationFacade(ICommandHandlerAsync<AddCommunityEventToScheduler> addCommmunityEventToSchedulerCommandHandler,
+internal class NotificationFacade(IServiceBus serviceBus,
     IQueryHandlerAsync<GetEventsScheduler, EventsSchedulerDto> eventsSchedulerQuery) : INotificationsFacade
 {
     public async Task<Result<string>> AddCommunityEventToSchedulerAsync(AddCommunityEventToSchedulerJson body, CancellationToken cancellationToken = default)
@@ -23,7 +23,7 @@ internal class NotificationFacade(ICommandHandlerAsync<AddCommunityEventToSchedu
             new EventVenue(body.EventVenue),
             new EventDate(body.EventDate));
         
-        await addCommmunityEventToSchedulerCommandHandler.HandleAsync(command, cancellationToken);
+        await serviceBus.SendAsync(command, cancellationToken);
         
         return Result.Success(command.AggregateId.Value);
     }

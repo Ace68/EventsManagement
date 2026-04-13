@@ -1,4 +1,5 @@
 ﻿using EventsManagement.Infrastructure;
+using EventsManagements.InMemoryBroker;
 
 namespace EventsManagement.Rest.Module;
 
@@ -15,7 +16,7 @@ public class InfrastructureModule : IModule
     /// Set the order in which the module should be registered in the application.
     /// Modules with lower order values will be registered before those with higher values.
     /// </summary>
-    public int Order => 0;
+    public int Order => 10;
     
     /// <summary>
     /// Registers the module's services and dependencies in the application's service collection.
@@ -25,9 +26,9 @@ public class InfrastructureModule : IModule
     /// <returns></returns>
     public IServiceCollection Register(WebApplicationBuilder builder)
     {
-        using var serviceProvider = builder.Services.BuildServiceProvider();
-        var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
         builder.Services.AddInfrastructure(builder.Configuration);
+
+        builder.Services.AddInMemoryBroker();
         
         return builder.Services;
     }
