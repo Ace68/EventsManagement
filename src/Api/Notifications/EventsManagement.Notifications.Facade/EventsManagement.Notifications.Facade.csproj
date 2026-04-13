@@ -18,4 +18,8 @@
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\EventsManagement.Notifications.Domain\EventsManagement.Notifications.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

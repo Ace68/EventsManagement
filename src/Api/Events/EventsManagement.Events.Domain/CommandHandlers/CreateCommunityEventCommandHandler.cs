@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EventsManagement.Events.Domain.CommandHandlers;
 
-public class CreateCommunityEventCommandHandler(IEventsManagementRepository<CommunityEvent> repository, ILoggerFactory loggerFactory)
+internal sealed class CreateCommunityEventCommandHandler(IEventsManagementRepository<CommunityEvent> repository, ILoggerFactory loggerFactory)
     : EventsManagementCommandHandler<CreateCommunityEvent, CommunityEvent>(repository, loggerFactory)
 {
     public override Task HandleAsync(CreateCommunityEvent command, CancellationToken cancellationToken = default)

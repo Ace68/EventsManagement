@@ -7,12 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Messages\Events\" />
-      <Folder Include="Messages\Queries\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\EventsManagement.Shared\EventsManagement.Shared.csproj" />
+      <ProjectReference Include="..\EventsManagement.Notifications.Entities\EventsManagement.Notifications.Entities.csproj" />
     </ItemGroup>
 
 </Project>
