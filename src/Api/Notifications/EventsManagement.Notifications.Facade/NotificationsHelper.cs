@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using EventsManagement.Notifications.Domain;
 using EventsManagement.Notifications.Infrastructure;
+using EventsManagement.Notifications.ReadModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,7 @@ public static class NotificationsHelper
 
         services.AddDomain();
         services.AddInfrastructure(configuration);
+        services.AddHttpContextAccessor().AddReadModel();
         
         return services;
     }

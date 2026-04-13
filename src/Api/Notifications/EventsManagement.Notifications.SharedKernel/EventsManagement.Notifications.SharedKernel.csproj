@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <Folder Include="Messages\Events\" />
-      <Folder Include="Messages\Queries\" />
     </ItemGroup>
 
     <ItemGroup>

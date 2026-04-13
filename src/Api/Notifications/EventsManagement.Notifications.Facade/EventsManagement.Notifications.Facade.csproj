@@ -19,6 +19,7 @@
       <ProjectReference Include="..\..\EventsManagement.Infrastructure\EventsManagement.Infrastructure.csproj" />
       <ProjectReference Include="..\EventsManagement.Notifications.Domain\EventsManagement.Notifications.Domain.csproj" />
       <ProjectReference Include="..\EventsManagement.Notifications.Infrastructure\EventsManagement.Notifications.Infrastructure.csproj" />
+      <ProjectReference Include="..\EventsManagement.Notifications.ReadModel\EventsManagement.Notifications.ReadModel.csproj" />
     </ItemGroup>
 
 </Project>
