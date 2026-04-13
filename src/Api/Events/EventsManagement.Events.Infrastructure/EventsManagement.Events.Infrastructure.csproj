@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\EventsManagement.Shared\EventsManagement.Shared.csproj" />
+      <ProjectReference Include="..\..\Notifications\EventsManagement.Notifications.Facade\EventsManagement.Notifications.Facade.csproj" />
       <ProjectReference Include="..\EventsManagement.Events.Entities\EventsManagement.Events.Entities.csproj" />
     </ItemGroup>
 

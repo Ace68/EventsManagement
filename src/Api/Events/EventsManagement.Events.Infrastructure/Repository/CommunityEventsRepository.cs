@@ -1,12 +1,15 @@
 ﻿using EventsManagement.Events.Entities.Dtos;
 using EventsManagement.Events.Entities.Entities;
 using EventsManagement.Events.Entities.Helpers;
+using EventsManagement.Notifications.Facade;
+using EventsManagement.Shared.ExternalContracts;
 using EventsManagement.Shared.Persister;
 using Microsoft.Extensions.Logging;
 
 namespace EventsManagement.Events.Infrastructure.Repository;
 
 public class CommunityEventsRepository(EventsManagementContext eventsManagementContext,
+    INotificationsFacade notificationsFacade,
     ILoggerFactory loggerFactory) : IEventsManagementRepository<CommunityEvent>
 {
     private readonly ILogger _logger = loggerFactory.CreateLogger<CommunityEventsRepository>();
@@ -34,6 +37,15 @@ public class CommunityEventsRepository(EventsManagementContext eventsManagementC
                 // Skip transaction for InMemory provider
                 await AddEntityAsync(communityEventDto, cancellationToken);
             }
+
+            AddCommunityEventToSchedulerJson jsonBody = new()
+            {
+                EventId = communityEventDto.Id.ToString(),
+                EventName = communityEventDto.EventName,
+                EventDate = communityEventDto.EventDate,
+                EventVenue = communityEventDto.EventVenue
+            };
+            await notificationsFacade.AddCommunityEventToSchedulerAsync(jsonBody, cancellationToken);
         }
         catch (Exception ex)
         {
@@ -44,12 +56,12 @@ public class CommunityEventsRepository(EventsManagementContext eventsManagementC
 
     public Task UpdateAsync(CommunityEvent entity, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 
     public Task DeleteAsync(CommunityEvent entity, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
     
     private async Task AddEntityAsync(CommunityEventDto dto, CancellationToken cancellationToken)
