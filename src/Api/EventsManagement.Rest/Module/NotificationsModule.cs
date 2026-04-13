@@ -9,7 +9,7 @@ public class NotificationsModule : IModule
     
     public IServiceCollection Register(WebApplicationBuilder builder)
     {
-        builder.Services.AddNotifications();
+        builder.Services.AddNotifications(builder.Configuration);
         
         return builder.Services;
     }
