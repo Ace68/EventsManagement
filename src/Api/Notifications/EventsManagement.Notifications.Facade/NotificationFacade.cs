@@ -9,7 +9,7 @@ namespace EventsManagement.Notifications.Facade;
 
 internal class NotificationFacade(ICommandHandlerAsync<AddCommunityEventToScheduler> addCommmunityEventToSchedulerCommandHandler) : INotificationsFacade
 {
-    public async Task<Result<string>> AddCommunityEventToScheduler(AddCommunityEventToSchedulerJson body, CancellationToken cancellationToken = default)
+    public async Task<Result<string>> AddCommunityEventToSchedulerAsync(AddCommunityEventToSchedulerJson body, CancellationToken cancellationToken = default)
     {
         AddCommunityEventToScheduler command = new(new CommunityEventId(body.EventId),
             new EventName(body.EventName),

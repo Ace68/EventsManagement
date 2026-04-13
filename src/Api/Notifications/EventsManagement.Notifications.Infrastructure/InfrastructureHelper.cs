@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EventsManagement.Notifications.Entities.Entities;
+using EventsManagement.Notifications.Infrastructure.Repository;
+using EventsManagement.Shared.Persister;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +14,8 @@ public static class InfrastructureHelper
     {
         services.AddDbContext<NotificationsContext>(options => 
             options.UseSqlServer(configuration["EventsManagement:SqlServer:ConnectionString"]!));
+
+        services.AddScoped<IEventsManagementRepository<EventsScheduler>, EventsSchedulerRepository>();
         
         return services;
     }

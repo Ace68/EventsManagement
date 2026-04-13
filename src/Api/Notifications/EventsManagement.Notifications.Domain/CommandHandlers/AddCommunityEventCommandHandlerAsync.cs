@@ -12,7 +12,6 @@ internal sealed class AddCommunityEventCommandHandlerAsync(IEventsManagementRepo
 {
     public override Task HandleAsync(AddCommunityEventToScheduler command, CancellationToken cancellationToken = default)
     {
-        
         cancellationToken.ThrowIfCancellationRequested();
         
         var aggregate = EventsScheduler.Create(new CommunityEventId(command.AggregateId.Value), command.EventName,

@@ -1,4 +1,5 @@
 ﻿using EventsManagement.Notifications.Facade;
+using EventsManagement.Notifications.Facade.Endpoints;
 
 namespace EventsManagement.Rest.Module;
 
@@ -16,6 +17,8 @@ public class NotificationsModule : IModule
 
     public WebApplication Configure(WebApplication app)
     {
+        app.MapNotificationsEndpoints();
+        
         return app;
     }
 }

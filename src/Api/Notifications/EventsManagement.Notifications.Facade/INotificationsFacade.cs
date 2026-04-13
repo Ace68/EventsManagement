@@ -5,7 +5,7 @@ namespace EventsManagement.Notifications.Facade;
 
 public interface INotificationsFacade
 {
-    Task<Result<string>> AddCommunityEventToScheduler(AddCommunityEventToSchedulerJson body,
+    Task<Result<string>> AddCommunityEventToSchedulerAsync(AddCommunityEventToSchedulerJson body,
         CancellationToken cancellationToken = default);
 
     Task<Result<EventsSchedulerJson>> GetSchedulerAsync(int page, int pageSize, CancellationToken cancellationToken);
