@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace EventsManagement.Notifications.ReadModel.EventHandlers;
+namespace EventsManagement.Notifications.Facade.EventHandlers;
 
 public class EventHubListenerHostedService(
     CommunityEventHubHandler listener,

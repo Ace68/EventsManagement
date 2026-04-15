@@ -1,10 +1,13 @@
 ﻿using System.Globalization;
 using EventsManagement.Notifications.Domain;
+using EventsManagement.Notifications.Facade.EventHandlers;
 using EventsManagement.Notifications.Infrastructure;
 using EventsManagement.Notifications.ReadModel;
+using EventsManagements.InMemoryBroker;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Muflone.Persistence;
 
 namespace EventsManagement.Notifications.Facade;
 
@@ -33,7 +36,14 @@ public static class NotificationsHelper
 
         services.AddDomain();
         services.AddInfrastructure(configuration);
-        services.AddReadModel(configuration);
+        services.AddReadModel();
+        
+        var eventhubParameters = configuration.GetSection("EventsManagement:EventHub").Get<EventHubParameters>();
+        services.AddSingleton<CommunityEventHubHandler>(sp => 
+            new CommunityEventHubHandler(
+                eventhubParameters!,
+                sp.GetRequiredService<IServiceBus>()));
+        services.AddHostedService<EventHubListenerHostedService>();
         
         return services;
     }

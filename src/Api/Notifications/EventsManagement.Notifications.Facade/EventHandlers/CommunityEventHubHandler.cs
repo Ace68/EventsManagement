@@ -9,7 +9,7 @@ using EventsManagements.InMemoryBroker;
 using Muflone.Messages.Commands;
 using Muflone.Persistence;
 
-namespace EventsManagement.Notifications.ReadModel.EventHandlers;
+namespace EventsManagement.Notifications.Facade.EventHandlers;
 
 public sealed class CommunityEventHubHandler(
     EventHubParameters eventHubParameters,
