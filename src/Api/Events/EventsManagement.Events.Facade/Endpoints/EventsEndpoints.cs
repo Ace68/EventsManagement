@@ -53,9 +53,10 @@ public static class EventsEndpoints
     
     private static async Task<IResult> HandleGetCommunityEvents(
         IEventsFacade eventsFacade,
-        [FromQuery] int page,
-        [FromQuery] int pageSize,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        [FromQuery] int page = 0,
+        [FromQuery] int pageSize = 10
+        )
     {
         cancellationToken.ThrowIfCancellationRequested();
         
