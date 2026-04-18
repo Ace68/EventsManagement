@@ -9,7 +9,7 @@ public class AttendeesModule : IModule
     
     public IServiceCollection Register(WebApplicationBuilder builder)
     {
-        builder.Services.AddAttendees();
+        builder.Services.AddAttendees(builder.Configuration);
         
         return builder.Services;
     }

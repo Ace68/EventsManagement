@@ -5,6 +5,7 @@
   <Folder Name="/50 Modules/" />
   <Folder Name="/50 Modules/Attendees/">
     <Project Path="Attendees/EventsManagement.Attendees.Facade/EventsManagement.Attendees.Facade.csproj" />
+    <Project Path="Attendees/EventsManagement.Attendees.SharedKernel/EventsManagement.Attendees.SharedKernel.csproj" />
   </Folder>
   <Folder Name="/50 Modules/Events/">
     <Project Path="Events/EventsManagement.Events.Domain/EventsManagement.Events.Domain.csproj" />
